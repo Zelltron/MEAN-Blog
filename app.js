@@ -5,8 +5,23 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
+var http = require ('http');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/news');
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/news';
+
+var theport = process.env.PORT || 3000;
+
+mongoose.connect(uristring, function (err, res) {
+   if (err) {
+   console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+   } else {
+   console.log ('Succeeded connected to: ' + uristring);
+   }
+ });
+
 require('./models/Comments');
 require('./models/Posts');
 require('./models/Users');
