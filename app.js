@@ -5,12 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
-var http = require ('http');
 var mongoose = require('mongoose');
-var uristring =
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
-    'mongodb://localhost/news';
+var uristring = process.env.MONGOLAB_URI || 'mongodb://localhost/news';
 
 var theport = process.env.PORT || 3000;
 
