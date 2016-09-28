@@ -9,14 +9,16 @@
     <style> .glyphicon-thumbs-up { cursor:pointer } </style>
   </head>
   <body ng-app="blog">
-    <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
-      <ul class="nav navbar-nav">
-        <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
-        <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
-        <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
-        <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
-      </ul>
-    </nav>
+    <div style="position: absolute; z-index:1; right: 20%;" class="row">
+      <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
+        <ul class="nav navbar-nav">
+          <li style="display: inline-block;" ng-show="isLoggedIn()"><a href="/#/home">{{ currentUser() }}</a></li>
+          <li style="display: inline-block;" ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+          <li style="display: inline-block;" ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+          <li style="display: inline-block;" ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+        </ul>
+      </nav>
+    </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <ui-view></ui-view>
@@ -36,9 +38,9 @@
           <span ng-hide="post.link">
             {{post.title}}
           </span>
-          <span ng-show="post.author">
-            posted by <a>{{post.author}}</a> |
-          </span>
+        </span>
+        <span ng-show="post.author">
+          posted by <a>{{post.author}}</a> |
         </span>
         <span>
           <a href="#/posts/{{post._id}}">Comments</a>
@@ -75,7 +77,7 @@
 
       <div ng-repeat="comment in post.comments | orderBy:'-upvotes'">
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
-        {{comment.upvotes}} - by {{comment.author}}
+          {{comment.upvotes}} - by {{comment.author}}
         <span style="font-size:20px; margin-left:10px;">
           {{comment.body}}
         </span>

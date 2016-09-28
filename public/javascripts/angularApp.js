@@ -94,7 +94,7 @@ app.config([
     };
 
     auth.logOut = function(){
-      $window.localStorage.removeItem('flapper-news-token');
+      $window.localStorage.removeItem('zell-blog-token');
     };
 
     return auth;
