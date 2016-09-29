@@ -9,6 +9,7 @@
     <script src="/javascripts/angularApp.js"></script>
     <style> .glyphicon-thumbs-up { cursor:pointer } </style>
   </head>
+  <!-- ********************************************* -->
   <body ng-app="blog">
     <!--  //////////////// -->
     <!-- ///  NAVBAR  /// -->
@@ -37,11 +38,22 @@
     </nav>
     <!-- </div> -->
     <!-- /////////// END NAVBAR ///////////-->
+<!-- ********************************************* -->
+
+    <!--  ///////////////// -->
+    <!-- /// UI RENDER /// -->
+    <!--///////////////// -->
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <ui-view></ui-view>
       </div>
     </div>
+    <!-- /////////// END UI RENDER///////////-->
+<!-- ********************************************* -->
+
+    <!--  ///////////////////// -->
+    <!-- /// HOME TEMPLATE /// -->
+    <!--///////////////////// -->
     <script type="text/ng-template" id="/home.html">
       <div class="page-header box">
         <div class='wave -one'></div>
@@ -116,6 +128,12 @@
         <button type="submit" class="btn btn-primary">Post</button>
       </form>
     </script>
+    <!-- /////////// END HOME TEMPLATE///////////-->
+<!-- ********************************************* -->
+
+    <!--  ///////////////////////// -->
+    <!-- /// REGISTER TEMPLATE /// -->
+    <!--///////////////////////// -->
     <script type="text/ng-template" id="/register.html">
       <div class="page-header">
         <h1>Ryan's Blog</h1>
@@ -138,9 +156,15 @@
         <button type="submit" class="btn btn-primary">Register</button>
       </form>
     </script>
+    <!-- /////////// END REGISTER TEMPLATE///////////-->
+<!-- ********************************************* -->
+
+    <!--  ////////////////////// -->
+    <!-- /// LOGIN TEMPLATE /// -->
+    <!--////////////////////// -->
     <script type="text/ng-template" id="/login.html">
       <div class="page-header">
-        <h1>Flapper News</h1>
+        <h1>Ryan's Blog</h1>
       </div>
 
       <div ng-show="error" class="alert alert-danger row">
@@ -160,5 +184,7 @@
         <button type="submit" class="btn btn-primary">Log In</button>
       </form>
     </script>
+    <!-- /////////// END LOGIN TEMPLATE///////////-->
+<!-- ********************************************* -->
   </body>
 </html>
