@@ -1,4 +1,4 @@
-var app = angular.module('blog', ['ui.router']);
+var app = angular.module('blog', ['ui.router', 'ui.bootstrap']);
 
 app.config([
   '$stateProvider',
@@ -203,6 +203,7 @@ function($scope, $state, auth){
   '$scope',
   'auth',
   function($scope, auth){
+    $scope.navbarCollapsed = true;
     $scope.isLoggedIn = auth.isLoggedIn;
     $scope.currentUser = auth.currentUser;
     $scope.logOut = auth.logOut;
