@@ -25,23 +25,23 @@
   opacity: .4;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: -5%;
   background: blue;
-  width: 1325px;
-  height: 1325px;
+  width: 2000px;
+  height: 2000px;
   margin-left: -100%;
   margin-top: 0px;
   transform-origin: 50% 48%;
-  border-radius: 43%;
-  animation: drift 6000ms infinite linear;
+  border-radius: 46%;
+  animation: drift 4000ms infinite linear;
 }
 
 .wave.-three {
-  animation: drift 5500ms infinite linear;
+  animation: drift 3500ms infinite linear;
 }
 
 .wave.-two {
-  animation: drift 8000ms infinite linear;
+  animation: drift 6000ms infinite linear;
   opacity: .1;
   background: aqua;
 }
