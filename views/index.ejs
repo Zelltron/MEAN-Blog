@@ -1,20 +1,21 @@
 <html>
   <head>
     <title>Ryan's Blog!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-    <link rel="stylesheet" href="/stylesheets/style.scss"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/app.scss">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.4/ui-bootstrap-tpls.js"></script>
     <script src="/javascripts/angularApp.js"></script>
     <style> .glyphicon-thumbs-up { cursor:pointer } </style>
   </head>
-  <!-- ********************************************* -->
+<!-- ********************************************* -->
   <body ng-app="blog">
     <!--  //////////////// -->
     <!-- ///  NAVBAR  /// -->
     <!--//////////////// -->
-    <!-- <div style="z-index:1;" class="col-md-6 col-md-offset-3"> -->
+  <div style="z-index:1;" class="col-md-6 col-md-offset-3">
     <nav ng-controller="NavCtrl" class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -36,8 +37,21 @@
         </div>
       </div>
     </nav>
-    <!-- </div> -->
     <!-- /////////// END NAVBAR ///////////-->
+<!-- ********************************************* -->
+
+    <!--  ////////////// -->
+    <!-- /// HEADER /// -->
+    <!--////////////// -->
+      <div class="page-header box">
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+        <div class='title'>Ryan's Blog</div>
+      </div>
+    </div>
+  </div>
+<!-- /////////// END HEADER ///////////-->
 <!-- ********************************************* -->
 
     <!--  ///////////////// -->
@@ -49,18 +63,13 @@
       </div>
     </div>
     <!-- /////////// END UI RENDER///////////-->
-<!-- ********************************************* -->
+    <!-- ********************************************* -->
 
-    <!--  ///////////////////// -->
-    <!-- /// HOME TEMPLATE /// -->
-    <!--///////////////////// -->
+    <!--  ///////////////////////////////// -->
+    <!-- /// POSTS ({(HOME)}) TEMPLATE /// -->
+    <!--///////////////////////////////// -->
     <script type="text/ng-template" id="/home.html">
-      <div class="page-header box">
-        <div class='wave -one'></div>
-        <div class='wave -two'></div>
-        <div class='wave -three'></div>
-        <div class='title'>Ryan's Blog</div>
-      </div>
+      <div class="page-header"></div>
       <div ng-repeat="post in posts | orderBy:'-upvotes'">
         <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
             {{post.upvotes}}
@@ -103,7 +112,7 @@
     <!-- /// POST TEMPLATE /// -->
     <!--///////////////////// -->
     <script type="text/ng-template" id="/posts.html">
-      <div class="page-header">
+      <div class="page-header"></div>
         <h3>
           <a ng-show="post.link" href="{{post.link}}">
             {{post.title}}
@@ -141,10 +150,7 @@
     <!-- /// REGISTER TEMPLATE /// -->
     <!--///////////////////////// -->
     <script type="text/ng-template" id="/register.html">
-      <div class="page-header">
-        <h1>Ryan's Blog</h1>
-      </div>
-
+      <div class="page-header"></div>
       <div ng-show="error" class="alert alert-danger row">
         <span>{{ error.message }}</span>
       </div>
@@ -169,10 +175,7 @@
     <!-- /// LOGIN TEMPLATE /// -->
     <!--////////////////////// -->
     <script type="text/ng-template" id="/login.html">
-      <div class="page-header">
-        <h1>Ryan's Blog</h1>
-      </div>
-
+      <div class="page-header"></div>
       <div ng-show="error" class="alert alert-danger row">
         <span>{{ error.message }}</span>
       </div>
